@@ -1,10 +1,11 @@
-import { configureStore,combineReducers } from '@reduxjs/toolkit'
-import  useReducer  from './user/userSlice'
-import {persistReducer} from 'redux-persist'
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import userReducer from './user/userSlice';
+
+import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 const rootReducer = combineReducers({
-  user:useReducer,
+  user: userReducer,
 });
 
 const persistConfig={
@@ -13,7 +14,7 @@ const persistConfig={
   version: 1,
 };
 
-const persistReducer = persistReducer(persistConfig,rootReducer);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
   reducer:persistReducer,
