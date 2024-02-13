@@ -15,6 +15,10 @@ const userSchema = new mongoose.Schema({
     type:String,
     required:true,
   },
+  profilePicture:{
+    type:String,
+    default:"https://friconix.com/png/fi-cnsuxl-user-circle.png",
+  }
 },{timestamps:true}
 );
 
