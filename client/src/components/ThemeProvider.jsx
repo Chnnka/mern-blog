@@ -4,7 +4,7 @@ export default function ThemeProvider({ children }) {
   const { theme } = useSelector((state) => state.theme);
   return (
     <div className={theme}>
-      <div className="bg-white text-gray-700 dark:text-gray-200 dark:bg-[rbg(16,23,43)] min-h-screen">
+      <div className="bg-slate-800 text-gray-700 dark:text-gray-200 dark:bg-[rbg(16,23,43)] min-h-screen">
         {children}
       </div>
     </div>
